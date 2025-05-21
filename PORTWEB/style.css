@@ -189,6 +189,10 @@ a {
     margin-bottom: 20px;
 }
 
+.project a{
+    margin-top: 20px;
+}
+
 .contact {
     padding: 4rem 2rem;
     background-color: #FFFECF;
