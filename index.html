@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio Website</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
   <header> 
     <nav class="navbar">
       <div class="logo"><a href="#">Anshul Narang</a></div>
-      <ul class="nav-links">
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -34,15 +37,9 @@
         <div class="about-text">
           <h2>Hi, I'm Anshul Narang</h2>
           <h4>Front-End Web Developer</h4>
-          <p>
-            I'm passionate about crafting elegant, responsive websites that deliver great user experiences. With a solid foundation in HTML, CSS, and JavaScript, I bring designs to life and love turning complex problems into clean, interactive interfaces.
-          </p>
+          <p>I'm passionate about crafting elegant, responsive websites that deliver great user experiences...</p>
           <div class="skills">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>React</span>
-            <span>Git</span>
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Git</span>
           </div>
           <a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
         </div>
@@ -53,41 +50,37 @@
       <h2>Projects</h2>
       <div class="projects-container">
         <div class="project">
-            <h3>My Portfolio Website</h3>
-            <p>Designed and developed this portfolio website to showcase my skills, projects, and contact information.</p>
-            <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
-            <a href="https://github.com/AnshulNarang23/Projects/tree/main/PORTWEB" target="_blank"><strong>Find Website Code on GitHub</strong></a>
+          <h3>My Portfolio Website</h3>
+          <p>Designed and developed this portfolio website...</p>
+          <a href="https://github.com/AnshulNarang23/Projects/tree/main/PORTWEB" target="_blank"><strong>Find Website Code on GitHub</strong></a>
         </div>
 
         <div class="project-card">
           <h3>Amazon Clone Website</h3>
-          <p>Created a basic static clone of the Amazon homepage focusing on layout and styling.</p>
-          <p><strong>Technologies:</strong> HTML, CSS</p>
+          <p>Created a basic static clone of the Amazon homepage...</p>
           <a href="https://github.com/AnshulNarang23/Projects/tree/main/Basic%20Amazon%20Clone" target="_blank"><strong>View on GitHub</strong></a>
         </div>
 
         <div class="project-card">
           <h3>MAX - The Virtual Assistant</h3>
-          <p>Developed an interactive virtual assistant with voice command features for desktop utility.</p>
-          <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+          <p>Developed an interactive virtual assistant with voice command features...</p>
           <a href="https://github.com/AnshulNarang23/Projects/tree/main/Max" target="_blank"><strong>View on GitHub</strong></a>
         </div>
       </div>
     </section>
 
     <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Have a question or want to work together? Send me a message!</p>
-            <form class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" rows="3" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-            </form>
-        </div>
+      <div class="container">
+        <h2>Contact Me</h2>
+        <p>Have a question or want to work together? Send me a message!</p>
+        <form class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" rows="3" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </section>
-
   </div>
 
   <footer>
@@ -95,14 +88,25 @@
       <p>&copy; 2025 Anshul Narang. All rights reserved.</p>
       <p>Connect with me on:</p>
       <div class="social-icons">
-        <a href="https://github.com/AnshulNarang23" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/anshul-narang-842595258/" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a> 
+        <a href="https://github.com/AnshulNarang23" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/anshul-narang-842595258/" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+  </script>
 </body>
 </html>
