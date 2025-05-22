@@ -250,3 +250,33 @@ footer {
   padding: 2rem 1rem;
   gap: 0.5rem;
 }
+
+.hamburger {
+display: none;
+font-size: 1.8rem;
+cursor: pointer;
+color: black;
+}
+
+@media (max-width: 768px) {
+.hamburger {
+display: block;
+}
+
+.nav-links {
+display: none;
+flex-direction: column;
+background-color: #FFFECF;
+position: absolute;
+top: 70px;
+right: 0;
+width: 100%;
+text-align: center;
+padding: 1rem 0;
+z-index: 999;
+}
+
+.nav-links.show {
+display: flex;
+}
+}
